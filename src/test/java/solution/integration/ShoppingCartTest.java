@@ -16,18 +16,20 @@ public class ShoppingCartTest {
 
     private ProductManager productManager;
     private CartManager cartManager;
+    private User user;
+    private Product doveSoap;
 
     @Before
     public void setup() {
         productManager = new ProductManagerImpl(new ProductStore());
         cartManager = new CartManagerImpl(new CartStore(), productManager);
+        doveSoap = new Product("Dove Soap", 39.99);
+        productManager.addProduct(doveSoap);
+        user = new User("user1", cartManager.createCart());
     }
 
     @Test
     public void testAddProductToShoppingCart() {
-        User user = new User("user1", cartManager.createCart());
-        Product doveSoap = new Product("Dove Soap", 39.99);
-        productManager.addProduct(doveSoap);
         Cart cart = cartManager.getCart(user.getCartId());
         cart.add(doveSoap, 5);
         assertEquals(199.95, cart.getCartPrice(), 0.001);
@@ -35,9 +37,6 @@ public class ShoppingCartTest {
 
     @Test
     public void testUpdateProductQuantityInShoppingCart() {
-        User user = new User("user1", cartManager.createCart());
-        Product doveSoap = new Product("Dove Soap", 39.99);
-        productManager.addProduct(doveSoap);
         Cart cart = cartManager.getCart(user.getCartId());
         cart.add(doveSoap, 5);
         cart.add(doveSoap, 3);
