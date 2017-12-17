@@ -51,6 +51,13 @@ public class ShoppingCartTest {
     }
 
     @Test
+    public void testAddNewProduct() {
+        Product product = TestData.getProduct();
+        shoppingCart.add(product, 5);
+        assertTrue(shoppingCart.add(new Product("abc", 12.34), 2));
+    }
+
+    @Test
     public void testGetCartPrice() {
         Product product = TestData.getProduct();
         Mockito.when(cartManager.getProduct(product.getId())).thenReturn(product);
