@@ -2,9 +2,6 @@ package solution.models;
 
 import solution.utils.Utils;
 
-/**
- * Created by aditya.dalal on 17/12/17.
- */
 public class Product {
 
     private String id;

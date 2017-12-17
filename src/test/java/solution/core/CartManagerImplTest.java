@@ -13,9 +13,6 @@ import solution.models.Product;
 import static org.junit.Assert.*;
 import static org.mockito.Mockito.when;
 
-/**
- * Created by aditya.dalal on 17/12/17.
- */
 
 @Category(UnitTests.class)
 public class CartManagerImplTest {

@@ -3,9 +3,6 @@ package solution.core;
 import solution.data.ProductStore;
 import solution.models.Product;
 
-/**
- * Created by aditya.dalal on 17/12/17.
- */
 public class ProductManagerImpl implements ProductManager {
 
     private ProductStore productStore;

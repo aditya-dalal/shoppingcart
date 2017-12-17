@@ -5,9 +5,6 @@ import solution.models.Product;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * Created by aditya.dalal on 17/12/17.
- */
 public class ProductStore {
 
     private Map<String, Product> products;

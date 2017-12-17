@@ -5,9 +5,6 @@ import solution.core.Cart;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * Created by aditya.dalal on 17/12/17.
- */
 public class CartStore {
 
     private Map<String, Cart> carts;

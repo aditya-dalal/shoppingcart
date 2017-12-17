@@ -13,9 +13,6 @@ import solution.groups.UnitTests;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
 
-/**
- * Created by aditya.dalal on 17/12/17.
- */
 
 @Category(UnitTests.class)
 public class CartStoreTest {

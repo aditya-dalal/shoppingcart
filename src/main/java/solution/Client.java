@@ -6,9 +6,6 @@ import solution.data.ProductStore;
 import solution.models.Product;
 import solution.models.User;
 
-/**
- * Created by aditya.dalal on 17/12/17.
- */
 public class Client {
 
     public static void main(String[] args) {
