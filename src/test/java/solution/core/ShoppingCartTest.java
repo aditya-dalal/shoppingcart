@@ -65,4 +65,10 @@ public class ShoppingCartTest {
         assertEquals(199.95, shoppingCart.getCartPrice(), 0.01);
     }
 
+    @Test
+    public void testSetTaxRate() {
+        shoppingCart.setTaxRate(12.5);
+        assertEquals(12.5, shoppingCart.getTaxRate(), 0.001);
+    }
+
 }

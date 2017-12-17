@@ -43,4 +43,14 @@ public class ShoppingCartTest {
         assertEquals(319.92, cart.getCartPrice(), 0.001);
     }
 
+    @Test
+    public void testCartForMultipleProductsWithTax() {
+        Product axeDeo = new Product("Axe Deo", 99.99);
+        productManager.addProduct(axeDeo);
+        Cart cart = cartManager.getCart(user.getCartId());
+        cart.add(doveSoap, 2);
+        cart.add(axeDeo, 2);
+        cart.setTaxRate(12.5);
+        assertEquals(314.96, cart.getCartPrice(), 0.001);
+    }
 }

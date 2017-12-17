@@ -12,6 +12,7 @@ public class ShoppingCart implements Cart {
     private String id;
     private List<Item> items;
     private CartManager cartManager;
+    private double taxRate;
 
     public ShoppingCart(CartManager cartManager) {
         this.id = new Utils().getUUID();
@@ -21,6 +22,14 @@ public class ShoppingCart implements Cart {
 
     public String getId() {
         return this.id;
+    }
+
+    public void setTaxRate(double taxRate) {
+        this.taxRate = taxRate;
+    }
+
+    public double getTaxRate() {
+        return this.taxRate;
     }
 
     public boolean add(Product product, int quantity) {
@@ -45,6 +54,8 @@ public class ShoppingCart implements Cart {
             Product product = cartManager.getProduct(item.getProductId());
             total += quantity * product.getPrice();
         }
+        double tax = (taxRate / 100) * total;
+        total += tax;
         return Math.round(total * 100.0)/100.0;
     }
 

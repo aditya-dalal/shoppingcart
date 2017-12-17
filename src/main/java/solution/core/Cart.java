@@ -6,4 +6,5 @@ public interface Cart {
     String getId();
     boolean add(Product product, int quantity);
     double getCartPrice();
+    void setTaxRate(double taxRate);
 }
