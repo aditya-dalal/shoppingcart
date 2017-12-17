@@ -12,4 +12,8 @@ public class User {
         this.name = name;
         this.cartId = cartId;
     }
+
+    public String getCartId() {
+        return this.cartId;
+    }
 }

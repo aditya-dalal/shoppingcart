@@ -27,4 +27,8 @@ public class ProductStore {
             return null;
         return products.get(productId);
     }
+
+    public int getSize() {
+        return products.size();
+    }
 }

@@ -14,11 +14,12 @@ public class ShoppingCart implements Cart {
 
     private String id;
     private Map<String, Item> items;
-    private double price;
+    private CartManager cartManager;
 
-    public ShoppingCart() {
+    public ShoppingCart(CartManager cartManager) {
         this.id = new Utils().getUUID();
         this.items = new HashMap<>();
+        this.cartManager = cartManager;
     }
 
     public String getId() {
@@ -41,6 +42,14 @@ public class ShoppingCart implements Cart {
     }
 
     public double getCartPrice() {
-        return this.price;
+        double total = 0;
+        for (Map.Entry<String, Item> itemEntry: items.entrySet()){
+            Item item = itemEntry.getValue();
+            int quantity = item.getQuantity();
+            Product product = cartManager.getProduct(item.getProductId());
+            total += quantity * product.getPrice();
+        }
+        return Math.round(total * 100.0)/100.0;
     }
+
 }

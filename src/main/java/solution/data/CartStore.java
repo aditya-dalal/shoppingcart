@@ -27,4 +27,8 @@ public class CartStore {
             return null;
         return carts.get(cartId);
     }
+
+    public int getSize() {
+        return carts.size();
+    }
 }

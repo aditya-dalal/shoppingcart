@@ -6,11 +6,11 @@ import solution.models.Product;
 /**
  * Created by aditya.dalal on 17/12/17.
  */
-public class InMemoryProductManager implements ProductManager {
+public class ProductManagerImpl implements ProductManager {
 
     private ProductStore productStore;
 
-    public InMemoryProductManager(ProductStore productStore) {
+    public ProductManagerImpl(ProductStore productStore) {
         this.productStore = productStore;
     }
 

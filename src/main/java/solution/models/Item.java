@@ -21,4 +21,8 @@ public class Item {
         return this.quantity;
     }
 
+    public String getProductId() {
+        return this.productId;
+    }
+
 }

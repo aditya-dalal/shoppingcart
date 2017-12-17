@@ -21,10 +21,6 @@ public class Product {
         return this.id;
     }
 
-    public String getName() {
-        return this.name;
-    }
-
     public double getPrice() {
         return this.price;
     }
