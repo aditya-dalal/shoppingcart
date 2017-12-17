@@ -28,7 +28,7 @@ public class ShoppingCart implements Cart {
             return false;
         Item item = getItem(product);
         if(item != null) {
-            item.setQuantity(quantity);
+            item.setQuantity(item.getQuantity() + quantity);
             return true;
         }
         else {

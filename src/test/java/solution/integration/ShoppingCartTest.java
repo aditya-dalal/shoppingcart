@@ -33,4 +33,15 @@ public class ShoppingCartTest {
         assertEquals(199.95, cart.getCartPrice(), 0.001);
     }
 
+    @Test
+    public void testUpdateProductQuantityInShoppingCart() {
+        User user = new User("user1", cartManager.createCart());
+        Product doveSoap = new Product("Dove Soap", 39.99);
+        productManager.addProduct(doveSoap);
+        Cart cart = cartManager.getCart(user.getCartId());
+        cart.add(doveSoap, 5);
+        cart.add(doveSoap, 3);
+        assertEquals(319.92, cart.getCartPrice(), 0.001);
+    }
+
 }
